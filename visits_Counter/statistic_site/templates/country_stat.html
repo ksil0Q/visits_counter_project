@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="statistic">
+    <div>Countries statistic:</div>
+    <table>
+        <tr>
+         <th>Countries</th><th>Visits</th>
+        </tr>
+        {% for val in countries_stat %}
+            <tr>
+                <td>{{val}}</td><td>{{ countries_stat[val] }}</td>
+            </tr>
+        {% endfor %}
+       </table>
+</div>
+
+{% endblock %}

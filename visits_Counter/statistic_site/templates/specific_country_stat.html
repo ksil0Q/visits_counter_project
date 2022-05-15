@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="statistic">
+    <div id="visits-form">From {{ country }}: {{ specific_country_stat }} visits</div>
+    <div>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <button class="btn">Country</button>
+        <div class="dropdown">
+            <button class="btn" style="border-left:1px solid navy">
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <ul id="countries">
+                    <li><a>Russia</a></li>
+                    <li><a>Germany</a></li>
+                    <li><a>USA</a></li>
+                    <li><a>Kazakhstan</a></li>
+                    <li><a>Netherlands</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <script>
+      visits_form = document.getElementById('visits-form');
+      country_buttons = document.getElementById('countries').getElementsByTagName('a');
+      Array.prototype.forEach.call(country_buttons, function(element) {
+        element.addEventListener('click', function () {
+            $.post('/get_stat_by_country', {
+                country: element.innerHTML
+            }).done(function (data) {
+                visitsToCorrectFormat(element.innerHTML, data['visits_count']);
+            });
+        });
+      });
+
+      function visitsToCorrectFormat(country, count) {
+        let correct_format = 'From ' + country + ': ' + count + ' visits';
+        visits_form.innerHTML = correct_format;
+      }
+  </script>
+
+{% endblock %}

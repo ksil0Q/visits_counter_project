@@ -1,0 +1,46 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(images/background.png);
+    background-size: 100%;
+    background-color: white;
+}
+
+div.content {
+    background: #FFFFFF99;
+    margin-top: 10%;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #FF4500;
+    box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 3px 6px rgb(0 0 0 / 22%);
+    margin: 40px 0 0 0;
+}
+
+.main_page_text {
+    margin: 20px;
+    color: #FF4500;
+    text-align: center;
+}
+
+h1.main_page_welcome_text {
+    text-align: center;
+    color: #FF4500;
+}
+
+.photo {
+    margin-top: 5%;
+}
+
+.form-contact {
+    background: #FFFFFF99;
+    width: 25%;
+    border-radius: 5px;
+    margin-top: 20%;
+    padding: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height: auto;
+    font-size: 2.6vw;
+}

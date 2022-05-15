@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="statistic">
+    <div>Total visits: {{ month }}</div>
+    <div class="chart-container">
+        <canvas id="month_stat_plot" width="600" height="320"></canvas>
+        {% block javascript %}
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script>
+            labels = JSON.parse({{ labels | tojson }})
+            data = JSON.parse({{ data | tojson }})
+            let ctx = document.getElementById('month_stat_plot').getContext('2d');
+            let chart = new Chart(ctx, {
+                type: 'line',
+                data: 
+                    {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Statistic by month',
+                            data: data,
+                            fill: false,
+                            borderColor: 'rgb(75, 192, 192)'
+                            }]   
+                    },
+                options:{
+                    maintainAspectRatio: false,
+                    responsive:true
+                }        
+            })
+        </script>
+
+        {% endblock %}
+    </div>
+</div>
+
+{% endblock %}

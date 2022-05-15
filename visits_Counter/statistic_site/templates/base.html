@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>
+            {{ title }}
+        </title>
+        <link type="text/css" href="{{ url_for('static', filename='css/stat_styles.css')}}" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="menu">
+            <span>Стата</span>
+            <ul class="menu_content">
+                <li class="menu_items", id="stat">По страницам
+                    <ul>
+                        <li class="menu_item", id="pages_stat"><a href="/pages">Страницы</a></li>
+                    </ul>
+                </li>
+                
+                <li class="menu_items", id="logon">По пользователям
+                    <ul>
+                        <li class="menu_item", id="unique"><a href="/unique_users">Уникальные</a></li>
+                        <li class="menu_item", id="authorized"><a href="/authorized_users">Авторизации</a></li>
+                        <li class="menu_item", id="registered"><a href="/registered_users">Регистрации</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu_items", id="countries_stat">По странам
+                    <ul>
+                        <li class="menu_item", id="country_stat"><a href="/country_stat">По всем</a></li>
+                        <li class="menu_item", id="likes_stat"><a href="/specific_country_stat">По конкретной</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu_items", id="times_stat">По времени
+                    <ul>
+                        <li class="menu_item", id="half_hour_stat"><a href="/half_hour_stat">За последние полчаса</a></li>
+                        <li class="menu_item", id="today_stat"><a href="/today_stat">За последний день</a></li>
+                        <li class="menu_item", id="month_stat"><a href="/month_stat">За последний месяц</a></li>
+                    </ul>
+                </li>
+    
+                <li class="menu_items", id="pages_stat">По действиям
+                    <ul>
+                        <li class="menu_item", id="downloads_stat"><a href="/downloads_stat">Загрузки</a></li>
+                        <li class="menu_item", id="likes_stat"><a href="/user_likes">Лайки</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+        </div>
+
+        {% block body%}
+
+        {% endblock%}
+    </body>
+</html>

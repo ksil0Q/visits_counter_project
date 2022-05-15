@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="statistic">
+    <div>Pages statistic on website {{ website_name }}:</div>
+    <table>
+        <tr>
+         <th>Pages</th><th>Visits</th>
+        </tr>
+        {% for val in pages %}
+            <tr>
+                <td>{{ val }}</td><td>{{ pages[val] }}</td>
+            </tr>
+        {% endfor %}
+       </table>
+</div>
+
+{% endblock %}

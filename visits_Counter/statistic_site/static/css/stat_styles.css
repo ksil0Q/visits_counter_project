@@ -1,0 +1,172 @@
+body {
+    background-color: #CCCCCC;
+}
+
+.menu {
+    background-color: #FFFFFF;
+    margin-top: 5%;
+    padding: 1%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    width: 30%;
+    max-width: auto; 
+    font-size: 2.8vw;
+    position: absolute;
+}
+
+.menu:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.menu_item {
+    padding: 10px;
+    margin-left: 0px;
+}
+
+.menu_item:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.menu_items {
+    padding-top: 2%;
+    list-style-type: none;
+}
+
+.menu_content ul {
+    display: none;
+    top: 100%;
+}
+
+.menu_content li:hover ul{display: block;}
+
+.menu_content ul li{
+    margin: 2%;
+    margin-left: -30px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.menu_content {
+    height: auto;
+    padding-left: 25px;
+    min-width: 40px;
+    list-style-position: inside;
+}
+
+.menu_item a{
+    text-decoration: none;
+    border-bottom: 2px dashed DarkOrchid;
+    padding-bottom: 3px;
+    color: DarkOrchid;
+}
+
+.statistic {
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    width: auto;
+    margin-left: 35%;
+    margin-top: 5%;
+    padding: 2%;
+    font-size: 2.8vw;
+    position:fixed;
+}
+.statistic:hover {
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.2);
+}
+
+table {
+width: 300px; /* Ширина таблицы */
+border-collapse: collapse; /* Убираем двойные линии между ячейками */
+border: 2px solid white; /* Прячем рамку вокруг таблицы */
+}
+
+td, th {
+padding: 3px; /* Поля вокруг содержимого таблицы */
+border: 1px solid maroon; /* Параметры рамки */
+text-align: left; /* Выравнивание по левому краю */
+}
+
+
+#month_stat_plot{
+    margin: 10px;
+    /* background: #FFFFFF; */
+}
+
+.chart-container {
+    width: 600px;
+    height: 300px;
+}
+
+
+/* Dropdown Button */
+.btn {
+    background-color:  #ada3a3;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    display:inline-block;
+    width: 150px;
+    height: 30px;
+    position: relative;
+    color: #fff;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:  #ada3a3;
+    min-width: 160px;
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content ul {
+    display: block;
+    width: 100%;
+    background: gray;
+    padding: 0;
+    margin: 10px 0 0;
+    list-style: none;
+    max-height: 230px;
+    overflow: hidden auto;
+}
+
+.dropdown-content li {
+    display: lock;
+    width: 100%;
+    height: 50px;
+    line-height: 30px;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+    display: block;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.btn:hover, .dropdown:hover .btn  {
+    background-color:  #ada3a3;
+}
