@@ -2,11 +2,21 @@
 {% block body %}
 
 <div class="form-contact">
-    <div>Log in</div>
+    <div class="label">Log in</div>
     <form action="/login" method="post">
-        <p><label>Nickname or email:</label><input type="text" name="nickname" value="" required /></p>
-        <p><label>Password:</label><input type="password" name="psw" value="" required /></p>
-        <p><input type="submit" value="Login"></p>
+        <div class="input">
+            <label>Nickname or email:</label>
+            <div>
+                <input type="text" name="nickname" value="" required />
+            </div>
+            <label>Password:</label>
+            <div>
+                <input type="password" name="psw" value="" required />
+            </div>
+        </div>
+        <div class="submit_button">
+            <input type="submit" value="Login">
+        </div>
     </form>
 
     {% for cat, msg in get_flashed_messages(True) %}

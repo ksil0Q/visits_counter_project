@@ -41,12 +41,12 @@ db.generate_mapping(create_tables=True)
 class DataError:
     message: str = 'Successfully'
     validity: bool = True
-    _password_pattern: str = r"^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=_]).*$"
+    _password_pattern: str = r"^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$"
     _email_pattern: str = r"^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
 
     def is_correct_data(self, login_name: str = None, email: str = None,
                         psw: str = None, psw2: str = None):
-        if len(login_name) < 6 and login_name:
+        if len(login_name) < 6:
             self.message = 'Login must be longer than 5 characters'
             self.validity = False
 
@@ -67,7 +67,6 @@ class DataError:
         if psw != psw2:
             self.message = 'Passwords don`t match'
             self.validity = False
-
         return DataError
 
     def is_valid_password(self, psw: str):

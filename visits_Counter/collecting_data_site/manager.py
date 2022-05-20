@@ -37,6 +37,8 @@ class ClientManager(object):
     @dispatch(str)
     @db_session
     def is_registered(self, cookie_uuid: str) -> bool:
+        if cookie_uuid:
+            return False
         return Client.exists(cookies_uuid=cookie_uuid)
 
     @dispatch(str, str)

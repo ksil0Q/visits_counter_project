@@ -72,7 +72,6 @@ def stat_by_last_half_hour():
 @app.route('/today_stat')
 def stat_by_last_day():
     today_stat = user.get_stat_by_last_day()
-    print(today_stat)
     count_of_visits = sum(today_stat.values())
     data = json.dumps(list(today_stat.values()))
     labels = json.dumps(list(today_stat.keys()))
@@ -103,4 +102,4 @@ def user_likes_stat():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=5001)

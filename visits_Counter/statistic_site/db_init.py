@@ -2,7 +2,7 @@ from pony.orm import *
 import json
 
 
-with open("db_config.json", "r") as config:
+with open("db_config.JSON", "r") as config:
     db_config = json.load(config)['DATABASE']
 
 db = Database()
