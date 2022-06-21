@@ -131,8 +131,10 @@ class Cookies:
     def create_cookies(self, request):
         if request.cookies.get('usr'):
             self.cookie['uuid'] = request.cookies.get('usr')
+            print('a')
         else:
             self.cookie['uuid'] = uuid.uuid4().hex
+            print(request.cookies.get('usr'))
         self.cookie['uuid']['path'] = request.host
         self.cookie['uuid']['domain'] = '127.0.0.1:5000'
         self.cookie['uuid']['secure'] = True

@@ -6,7 +6,7 @@
             }
     },
     "DATABASE": {
-        "HOST": "db",
+        "HOST": "127.0.0.1",
         "USER": "postgres",
         "PASSWORD": "qwer1234",
         "PORT": 5432,
